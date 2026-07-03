@@ -12,7 +12,7 @@ model Blog {
   title       String
   slug        String       @unique
   description String       @db.Text
-  image_url   String
+  image_url   String       @db.Text
 
   updated_at  DateTime     @updatedAt
 
@@ -24,7 +24,7 @@ model Game {
   title           String
   slug            String        @unique
   description     String        @db.Text
-  image_url       String
+  image_url       String        @db.Text
   release_year    Int
   publisher       String
   review_summary  String        @db.Text
@@ -37,7 +37,7 @@ model Game {
 
 model GameGallery {
   id        Int    @id @default(autoincrement())
-  image_url String
+  image_url String @db.Text
   game_id   Int
   game      Game   @relation(fields: [game_id], references: [id])
 
@@ -50,7 +50,7 @@ model Rating {
   title                  String
   summary                String                  @db.Text
   description            String                  @db.Text
-  image_url              String
+  image_url              String                  @db.Text
   age                    Int
   games                  Game[]
   content_classifications ContentClassification[]
@@ -62,7 +62,7 @@ model ContentClassification {
   id          Int    @id @default(autoincrement())
   title       String
   description String @db.Text
-  content_icon   String
+  content_icon   String @db.Text
   rating_id   Int
   rating      Rating @relation(fields: [rating_id], references: [id])
 
