@@ -32,16 +32,16 @@ Gandakan (copy) file `.env.example` menjadi `.env`:
 cp .env.example .env
 ```
 *(Atau Anda bisa membuat file `.env` baru secara manual lalu menyalin isi dari `.env.example`)*.
-Pastikan konfigurasi `DATABASE_URL` di dalam file `.env` sudah sesuai (secara default sudah dikonfigurasi untuk terhubung ke Docker MySQL lokal).
+Pastikan konfigurasi semua env key seperti `DATABASE_URL` di dalam file `.env` sudah sesuai.
 
-### 4. Setup Prisma (Generate & Migrasi)
+### 3. Setup Prisma (Generate & Migrasi)
 Setelah database menyala, Lakukan generate Prisma Client dan melakukan migrasi struktur tabel (schema) ke dalam database:
 ```bash
 npx prisma generate
 npx prisma migrate dev
 ```
 
-### 5. Memasukkan Data Awal (Seeding)
+### 4. Memasukkan Data Awal (Seeding)
 Agar langsung memiliki data dummy untuk dikerjakan, jalankan proses seeding:
 ```bash
 npx prisma db seed
@@ -49,7 +49,7 @@ npx prisma db seed
 node prisma/seed.js
 ```
 
-### 6. Jalankan Server Development
+### 5. Jalankan Server Development
 Setelah semuanya siap, jalankan server backend:
 ```bash
 npm run dev
