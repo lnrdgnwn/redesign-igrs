@@ -53,7 +53,7 @@ const Footer = () => {
 
         <div className="border-t border-white/15 pt-10 text-center">
           <p className="font-medium text-xs leading-4 text-text-footer/60">
-            © 2024 Indonesia Game Rating System (IGRS). Kementerian Komunikasi dan Digital Republik Indonesia.
+            © 2026 Indonesia Game Rating System (IGRS). Kementerian Komunikasi dan Digital Republik Indonesia.
           </p>
         </div>
       </div>

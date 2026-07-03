@@ -92,7 +92,7 @@ const MasukPage = () => {
 
       <footer className="w-full py-6 text-center border-t border-border/30 relative z-10 bg-white/80 backdrop-blur-sm">
         <p className="text-[14px] font-medium text-[#424750]">
-          © 2024 Indonesia Game Rating System. Kementerian Komunikasi dan Digital.
+          © 2026 Indonesia Game Rating System. Kementerian Komunikasi dan Digital.
         </p>
       </footer>
     </main>
