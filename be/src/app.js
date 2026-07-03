@@ -15,7 +15,7 @@ const app = express();
 // Middlewares
 app.use(cors());
 app.use(express.json());
-app.use('/assets', express.static('public'));
+app.use('/assets', express.static('public/assets'));
 
 // Swagger UI
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
