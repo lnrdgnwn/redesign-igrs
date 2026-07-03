@@ -1,13 +1,32 @@
-import React, { useState } from 'react';
-
-const stats = [
-  { value: '3.4K+', label: 'Gim Terdaftar' },
-  { value: '120+', label: 'Publisher Lokal' },
-  { value: '5', label: 'Kategori Rating' },
-];
+import React, { useState, useEffect } from 'react';
+import { fetchRatings } from '../services/api';
 
 const HeroSection = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [stats, setStats] = useState([
+    { value: '—', label: 'Gim Terdaftar' },
+    { value: '—', label: 'Publisher' },
+    { value: '—', label: 'Kategori Rating' },
+  ]);
+
+  useEffect(() => {
+    fetchRatings()
+      .then((data) => {
+        const allGames = data.flatMap((r) => r.games || []);
+        const totalGames = allGames.length;
+        const uniquePublishers = new Set(allGames.map((g) => g.publisher)).size;
+        const totalRatings = data.length;
+
+        setStats([
+          { value: `${totalGames}+`, label: 'Gim Terdaftar' },
+          { value: `${uniquePublishers}+`, label: 'Publisher' },
+          { value: `${totalRatings}`, label: 'Kategori Rating' },
+        ]);
+      })
+      .catch((err) => {
+        console.error('Gagal memuat statistik:', err);
+      });
+  }, []);
 
   return (
     <section id="hero" className="relative w-full overflow-hidden bg-primary">
