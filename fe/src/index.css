@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* ===== Design Tokens from Figma (Vibrant) ===== */
+@theme {
+  --color-primary: #002A66;
+  --color-primary-light: #005FAE;
+  --color-accent: #0C408D;
+  --color-accent-dark: #630003;
+  --color-accent-red: #8D0006;
+  --color-text-dark: #191C1E;
+  --color-text-body: #434751;
+  --color-text-muted: #6B7280;
+  --color-text-hero-sub: #AFC6FF;
+  --color-text-footer: #E0E3E5;
+  --color-bg-light: #F7F9FB;
+  --color-border: #C3C6D3;
+  --color-border-nav: #005FAE;
+
+  /* Rating colors */
+  --color-rating-3: #43A832;
+  --color-rating-7: #84CC16;
+  --color-rating-13: #FFB400;
+  --color-rating-15: #FF6400;
+  --color-rating-18: #E92B25;
+
+  /* Map the custom font to Tailwind's default sans font */
+  --font-sans: 'Manrope', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-text-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
