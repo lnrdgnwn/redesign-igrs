@@ -130,7 +130,7 @@ const InformasiRatingPage = () => {
                   >
                     <div className="w-[48px] h-[48px] shrink-0 bg-[#F0F7FF] rounded-full flex items-center justify-center overflow-hidden">
                       <img 
-                        src={item.content_icon} 
+                        src={`${import.meta.env.VITE_ASSETS_URL}${item.content_icon}`} 
                         alt={item.title}
                         className="w-7 h-7 object-contain"
                         onError={(e) => { e.target.style.display = 'none'; }}
